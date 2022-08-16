@@ -7,9 +7,14 @@ from platform import platform
 
 import platform
 import os
+import getpass
 
 
-ProcessInfo = [os.popen('wmic process get description, processid').read()]
+ProcessList= [os.popen('wmic process get description, processid').read()]
 SistemaOP = [platform.uname()]
-print(SistemaOP)
+ProcessInfo = SistemaOP[0].processor
+user = getpass.getuser()
+NameOS = platform.system()
+VersionOS = platform.version()
+#print(NameOS, VersionOS, user, ProcessInfo)
 
